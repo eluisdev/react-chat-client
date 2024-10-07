@@ -12,7 +12,7 @@ export default function ProfileInfo() {
 
     const { userInfo, setUserInfo } = useAppStore()
     const navigate = useNavigate()
-
+    
     const logOut = async () => {
         try {
             const response = await apiClient.post(LOGOUT_ROUTE, {}, { withCredentials: true })
