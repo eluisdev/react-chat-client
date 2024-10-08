@@ -89,7 +89,7 @@ export default function MessageContainer() {
     setIsDownloading(true)
     setFileDownloadProgress(0)
     const response = await apiClient.get(
-      `${HOST}/${url}`,
+      url,
       {
         responseType: "blob",
         onDownloadProgress: progressEvent => {
@@ -143,7 +143,7 @@ export default function MessageContainer() {
                 }}
               >
                 <img
-                  src={`${HOST}/${message.fileUrl}`}
+                  src={message.fileUrl}
                   height={300}
                   width={300}
                 />
@@ -205,7 +205,7 @@ export default function MessageContainer() {
                   }}
                 >
                   <img
-                    src={`${HOST}/${message.fileUrl}`}
+                    src={message.fileUrl}
                     height={300}
                     width={300}
                   />
@@ -236,7 +236,7 @@ export default function MessageContainer() {
                 {
                   message.sender.image && (
                     <AvatarImage
-                      src={`${HOST}/${message.sender.image}`}
+                      src={message.sender.image}
                       alt="profile"
                       className="object-cover w-full h-full bg-black"
                     />
@@ -276,7 +276,7 @@ export default function MessageContainer() {
             <div className="">
               <img
                 className="h-[80vh] w-full bg-cover"
-                src={`${HOST}/${imageURL}`}
+                src={imageURL}
               />
             </div>
             <div className="flex gap-5 fixed top-0 mt-5">

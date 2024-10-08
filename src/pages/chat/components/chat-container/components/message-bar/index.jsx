@@ -126,6 +126,7 @@ export default function MessageBar() {
                 <input
                     type="file"
                     className="hidden"
+                    accept="image/*"
                     ref={fileInputRef}
                     onChange={handleAttachmentChange}
                 />

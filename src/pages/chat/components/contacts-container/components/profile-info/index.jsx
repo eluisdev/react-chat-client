@@ -33,7 +33,7 @@ export default function ProfileInfo() {
                         {
                             userInfo.image ? (
                                 <AvatarImage
-                                    src={`${HOST}/${userInfo.image}`}
+                                    src={userInfo.image}
                                     alt="profile"
                                     className="object-cover w-full h-full bg-black"
                                 />

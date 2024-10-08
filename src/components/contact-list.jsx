@@ -35,7 +35,7 @@ export default function ContactList({ contacts, isChannel = false }) {
                 {
                   contact.image ? (
                     <AvatarImage
-                      src={`${HOST}/${contact.image}`}
+                      src={contact.image}
                       alt="profile"
                       className="object-cover w-full h-full bg-black"
                     />
