@@ -6,6 +6,7 @@ import { useAppStore } from "./store"
 import { useEffect, useState } from "react"
 import { apiClient } from "./lib/api-client"
 import { GET_USER_INFO } from "./utils/constants"
+import { Loading } from "./pages/chat/components/Loading"
 
 const PrivateRoute = ({children}) => {
   const {userInfo} = useAppStore()
@@ -25,6 +26,7 @@ function App() {
   const [loading, setLoading] = useState(true)
 
   const getUserData = async () => {
+    setLoading(true)
     try {
       const response = await apiClient.get(GET_USER_INFO, {
         withCredentials: true
@@ -50,7 +52,7 @@ function App() {
  
   },[userInfo, setUserInfo])
   if (loading) {
-    return <div>Loading...</div>
+    return <Loading allPage={true}/>
   }
   return (
     <BrowserRouter>
