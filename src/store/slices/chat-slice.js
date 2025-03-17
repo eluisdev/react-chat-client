@@ -26,7 +26,7 @@ export const createChatSlice = (set, get) => ({
         const channels = get().channels
         set({channels: [channel, ...channels]})
     },
-    addMessage: (message) => { //TODO: Revisar codigo
+    addMessage: (message) => {
         const selectedChatMessages = get().selectedChatMessages
         const selectedChatType = get().selectedChatType
 
@@ -47,7 +47,7 @@ export const createChatSlice = (set, get) => ({
             ]
         })
     },
-    addChannelInChannelList: message => { //TODO: Revisar codigo
+    addChannelInChannelList: message => {
         const channels = get().channels
         const data = channels.find(channel => channel._id === message.channelId)
         const index = channels.findIndex(
@@ -58,7 +58,7 @@ export const createChatSlice = (set, get) => ({
             channels.unshift(data)
         }
     },
-    addContactsInDMContacts: message => { //TODO: Revisar codigo
+    addContactsInDMContacts: message => {
         const userId = get().userInfo.id
         const fromId =
             message.sender._id === userId

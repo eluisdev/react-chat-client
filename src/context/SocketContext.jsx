@@ -24,7 +24,7 @@ export const SocketProvider = ({ children }) => {
                 console.log("Connected to socket server");
             })
 
-            const handleRecieveMessage = (message) => { //TODO: Revisar codigo (._id)
+            const handleRecieveMessage = (message) => {
                 const {selectedChatData, selectedChatType, addMessage, addContactsInDMContacts} = useAppStore.getState()
                 if (selectedChatType !== undefined && (
                     selectedChatData._id === message.sender._id ||

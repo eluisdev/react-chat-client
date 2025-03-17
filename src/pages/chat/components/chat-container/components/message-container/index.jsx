@@ -64,7 +64,7 @@ export default function MessageContainer() {
     return imageRegex.test(filePath)
   }
 
-  const renderMessages = () => { //TODO: revisar codigo
+  const renderMessages = () => {
     let lastDate = null
     return selectedChatMessages.map(message => {
       const messageDate = moment(message.timestamp).format("YYYY-MM-DD")
@@ -85,7 +85,7 @@ export default function MessageContainer() {
     })
   }
 
-  const downloadFile = async url => { //TODO: Revisar codigo
+  const downloadFile = async url => {
     setIsDownloading(true)
     setFileDownloadProgress(0)
     const response = await apiClient.get(
@@ -111,7 +111,7 @@ export default function MessageContainer() {
     setFileDownloadProgress(0)
   }
 
-  const renderDMMessages = (message) => (//TODO: Revisar todo
+  const renderDMMessages = (message) => (
     <div
       className={`${message.sender === selectedChatData._id ? "text-left" : "text-right"}`}
     >
@@ -270,7 +270,6 @@ export default function MessageContainer() {
       {renderMessages()}
       <div ref={scrollRef}>
         {
-          //TODO: Revisar codigo backdrop-blur-lg y fixed
           showImage &&
           <div className="fixed z-[1000] top-0 left-0 h-[100vh] w-[100vw] flex items-center justify-center backdrop-blur-lg flex-col">
             <div className="">

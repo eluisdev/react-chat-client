@@ -63,7 +63,7 @@ export default function MessageBar() {
         }
     }
 
-    const handleAttachmentChange = async (e) => { //TODO: Revisar codigo
+    const handleAttachmentChange = async (e) => {
         try {
             const file = e.target.files[0]
             if (file) {
@@ -116,6 +116,11 @@ export default function MessageBar() {
                     placeholder="Enter message"
                     value={message}
                     onChange={e => setMessage(e.target.value)}
+                    onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                            handleSendMessage();
+                        }
+                    }}
                 />
                 <button
                     className="text-neutral-500 focus:border-none focus:outline-none focus:text-white duration-300 transition-all"
